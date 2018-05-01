@@ -1,0 +1,19 @@
+ssh -i ~/.ssh/${GUID}key.pem ec2-user@app1.${GUID}.example.opentlc.com
+
+ansible-playbook -i myinventory.file bad-ansible/3tier-bad/badplaybook.yml -e "GUID=${GUID}"
+
+
+ansible-playbook -i myinventory.file bad-ansible/3tier-bad/bad-playbook.yml -e "GUID=${GUID}" --limit @/root/ansible_training/bad-ansible/3tier-bad/bad-playbook.retry
+
+ansible-playbook -i myinventory.file bad-ansible/3tierbad/cleanup.yml
+
+
+Prakhar Git Hub repository:
+
+prakhar1985
+
+homework-assignment-automation
+
+$ ansible-playbook -i myinventory.file main.yml -e "GUID=${GUID}" --ask-vault-pass
+
+
