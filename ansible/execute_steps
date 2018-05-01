@@ -17,3 +17,4 @@ homework-assignment-automation
 $ ansible-playbook -i myinventory.file main.yml -e "GUID=${GUID}" --ask-vault-pass
 
 
+password: ansible
